@@ -83,24 +83,102 @@
 }
 main{
     background: var(--amarillo);
+    height: 100vh;
     padding: 30px;
+    display: flex;
 }
+/*------------------contenedor componentes--------------*/
 .Cmenu{
     background: var(--blanco);
-    margin: 120px 0 0 0;
-    border-radius:30px;
+    margin: 130px 0 0 0;
+    border-radius:30px 0 0 30px;
+    height: 80vh;
     padding: 50px;
-    height: 82vh;
-    overflow-x: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
 }
+.Cmenu::-webkit-scrollbar {
+    width: 8px;     /* Tamaño del scroll en vertical */
+    height: 8px;    /* Tamaño del scroll en horizontal */
+    display: none;  /* Ocultar scroll */
+}
+/*----------pizza selection---------------*/
+.Cmenu-selectType{
+    width: 90%;
+    position: fixed;
+    top: 170px;
+    display: flex;
+    gap: 10px;
+}
+.Cmenu-selectType button{
+    border: none;
+    background: var(--amarillo);
+    color: var(--blanco);
+    padding: 8px 20px;
+    border-radius: 10px;
+}
+.Cmenu-selectType button:hover{
+    background: var(--rojo);
+}
+/*--------------- menu card pizza--------------*/
 .Cmenu-pizza{
     display: grid;
     gap: 50px;
     grid-template-columns: repeat(3, 1fr);
-    height: 80vh;
+    width: 100%;
 }
+/*----------------card pizza------------*/
 .Cmenu-pizza__card{
     border-radius: 20px;
     box-shadow:  10px 10px 28px #dfebfd,
     -10px -10px 28px #f6f8fc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 680px;
+}
+.Cmenu-pizza__card img{
+    width: 300px;
+}
+/*-------------barra lateral menu----------*/
+.Cmenu-lateral{
+    position: relative;
+    background: var(--negro);
+    height: 80vh;
+    width: 10%;
+    margin: 130px 0 0 0;
+    border-radius: 0 30px 30px 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.Cmenu-lateral button{
+    border: none;
+    background: var(--blanco);
+    width: 100%;
+    padding: 8px 20px;
+    border-radius: 10px;
+}
+.Cmenu-lateral button:hover{
+    background: var(--verde);
+    color: var(--blanco);
+}
+.Cmenu-lateral__personalizada{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    flex-direction: column;
+}
+.Cmenu-lateral div:nth-child(1){
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.Cmenu-lateral div:nth-child(2){
+    width: 100%;
 }
